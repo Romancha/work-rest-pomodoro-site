@@ -31,7 +31,7 @@ You will also see any lint errors in the console.
 ## Build & Deploy
 
 > It was convenient for me to run the application in docker. \
-> So build and deploy based on docker deployment.
+> So 'build and deploy' based on docker deployment.
 
 ### Build
 
@@ -46,7 +46,7 @@ Docker image pushed to docker hub.
 
 All you need to deploy site via docker located in [docker folder](/docker).
 
-[wr-site.yml](/docker/wr-site.yml) - docker compose file with site image
+[wr-site.yml](/docker/wr-site.yml) - docker compose file with site image tag
 
 [nginx-certbot.env](/docker/nginx-certbot.env) - certbot config file. Please learn more
 about [docker-nginx-certbot](https://github.com/JonasAlfredsson/docker-nginx-certbot). Very recommend
@@ -55,7 +55,7 @@ docs before using image.
 
 [server.conf](/docker/nginx/user_conf.d/server.conf) - nginx config
 
-:warning: [Docker deployment folder](/docker) contains work&rest project specific configs, like:
+:warning: [Docker deployment folder](/docker) contains 'Work & Rest' project specific configs, like:
 * image tag on [wr-site.yml](/docker/wr-site.yml)
 * email on [nginx-certbot.env](/docker/nginx-certbot.env)
 * server_name, path to site on [nginx-certbot.env](/docker/nginx-certbot.env)
