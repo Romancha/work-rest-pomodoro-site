@@ -1,0 +1,21 @@
+{
+  "short_name": "Work & Rest",
+  "name": "Work & Rest - Flexible Pomodoro Timer",
+  "description": "Work & Rest combines pomodoro techniques with flexible configuration, task categories and statistics, thereby you will be productive, focused and healthy.",
+  "icons": [
+    {
+      "src": "logo192.ico",
+      "sizes": "64x64",
+      "type": "image/x-icon"
+    },
+    {
+      "src": "logo192.png",
+      "type": "image/png",
+      "sizes": "192x192"
+    }
+  ],
+  "start_url": ".",
+  "display": "standalone",
+  "theme_color": "#000000",
+  "background_color": "#ffffff"
+}

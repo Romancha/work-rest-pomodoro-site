@@ -1,0 +1,34 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
+
+    <url>
+        <loc>https://pomodoro-timer.space/</loc>
+        <lastmod>2022-03-22</lastmod>
+    </url>
+
+    <url>
+        <loc>https://pomodoro-timer.space/about</loc>
+        <lastmod>2022-03-22</lastmod>
+    </url>
+
+    <url>
+        <loc>https://pomodoro-timer.space/faq</loc>
+        <lastmod>2022-03-22</lastmod>
+    </url>
+
+    <url>
+        <loc>https://pomodoro-timer.space/guide</loc>
+        <lastmod>2022-03-22</lastmod>
+    </url>
+
+    <url>
+        <loc>https://pomodoro-timer.space/release</loc>
+        <lastmod>2022-03-22</lastmod>
+    </url>
+
+    <url>
+        <loc>https://pomodoro-timer.space/app-privacy-policy</loc>
+        <lastmod>2022-03-22</lastmod>
+    </url>
+
+</urlset>
