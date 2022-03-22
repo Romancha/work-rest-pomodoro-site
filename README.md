@@ -2,7 +2,7 @@
 
 ### See: [pomodoro-timer.space](https://pomodoro-timer.space)
 
-![Alt text](site-preview.png)
+![Alt text](site-preview-1200.png)
 
 Work & Rest mobile application website created with [React](https://reactjs.org/)
 , [Bootstrap](https://react-bootstrap.github.io/), [TypeScript](https://www.typescriptlang.org/), based
