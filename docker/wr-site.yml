@@ -1,7 +1,7 @@
 version: '2'
 services:
   wrpomodoro:
-    image: todo-some-id-here
+    image: trueromancha/wr-pomodoro-site:latest
     restart: unless-stopped
     env_file:
       - ./nginx-certbot.env
