@@ -1,48 +1,76 @@
-# Work & Rest: App Website
+# Work & Rest - Flexible Pomodoro Timer: App Website
 
 See: [pomodoro-timer.space](https://pomodoro-timer.space).
 
-Bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
+Work & Rest mobile application website created with [React](https://reactjs.org/)
+, [Bootstrap](https://react-bootstrap.github.io/), [TypeScript](https://www.typescriptlang.org/), based
+on [create-react-app](https://github.com/facebook/create-react-app). \
+Deployed as docker-compose, image contains react-site, nginx and certbot with auto-renewal cert.
 
-## Available Scripts
+## Local developing
 
-In the project directory, you can run:
+Developing like a general react app.
 
-### `npm start`
+Clone repository and run for install packages:
 
-Runs the app in the development mode.\
+```
+npm install
+```
+
+Runs the app in the development mode:
+
+```
+npm start
+```
+
 Open [http://localhost:3000](http://localhost:3000) to view it in the browser.
 
 The page will reload if you make edits.\
 You will also see any lint errors in the console.
 
-### `npm test`
+## Build & Deploy
 
-Launches the test runner in the interactive watch mode.\
-See the section about [running tests](https://facebook.github.io/create-react-app/docs/running-tests) for more information.
+> It was convenient for me to run the application in docker. \
+> So build and deploy based on docker deployment.
 
-### `npm run build`
+### Build
 
-Builds the app for production to the `build` folder.\
-It correctly bundles React in production mode and optimizes the build for the best performance.
+GitHub workflow actions [./github/docker-image.yml](/.github/workflows/docker-image.yml) build final site docker image
+based on [Dockerfile](Dockerfile).
 
-The build is minified and the filenames include the hashes.\
-Your app is ready to be deployed!
+Image contains react app (copied to nginx site directory `/var/www/wrpomodoro`), nginx + certbot with auto-renewal cert.
 
-See the section about [deployment](https://facebook.github.io/create-react-app/docs/deployment) for more information.
+Docker image pushed to docker hub.
 
-### `npm run eject`
+### Deploy
 
-**Note: this is a one-way operation. Once you `eject`, you can’t go back!**
+All you need to deploy site via docker located in [docker folder](/docker).
 
-If you aren’t satisfied with the build tool and configuration choices, you can `eject` at any time. This command will remove the single build dependency from your project.
+[wr-site.yml](/docker/wr-site.yml) - docker compose file with site image
 
-Instead, it will copy all the configuration files and the transitive dependencies (webpack, Babel, ESLint, etc) right into your project so you have full control over them. All of the commands except `eject` will still work, but they will point to the copied scripts so you can tweak them. At this point you’re on your own.
+[nginx-certbot.env](/docker/nginx-certbot.env) - certbot config file. Please learn more
+about [docker-nginx-certbot](https://github.com/JonasAlfredsson/docker-nginx-certbot). Very recommend
+read [Good to Know nginx-certbot](https://github.com/JonasAlfredsson/docker-nginx-certbot/blob/master/docs/good_to_know.md)
+docs before using image.
 
-You don’t have to ever use `eject`. The curated feature set is suitable for small and middle deployments, and you shouldn’t feel obligated to use this feature. However we understand that this tool wouldn’t be useful if you couldn’t customize it when you are ready for it.
+[server.conf](/docker/nginx/user_conf.d/server.conf) - nginx config
 
-## Learn More
+:warning: [Docker deployment folder](/docker) contains work&rest project specific configs, like:
+* image tag on [wr-site.yml](/docker/wr-site.yml)
+* email on [nginx-certbot.env](/docker/nginx-certbot.env)
+* server_name, path to site on [nginx-certbot.env](/docker/nginx-certbot.env)
 
-You can learn more in the [Create React App documentation](https://facebook.github.io/create-react-app/docs/getting-started).
+---
+Also, you can deploy react app as you want. See the section
+about [deployment](https://facebook.github.io/create-react-app/docs/deployment) for more information.
+
+### Result
+
+One-command `docker-compose -f wr-site.yml up -d` site deployment with auto-renewal certificate.
+
+## Learn More About React App
+
+You can learn more in
+the [Create React App documentation](https://facebook.github.io/create-react-app/docs/getting-started).
 
 To learn React, check out the [React documentation](https://reactjs.org/).
