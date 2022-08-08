@@ -55,7 +55,8 @@ export default function Footer() {
                             <li className="nav-item mb-2"><a href="mailto:wr@romancha.org"
                                                              className="nav-link p-0 text-muted">Email</a></li>
                             <li className="nav-item mb-2"><a href={"https://crowdin.com/project/work-rest"}
-                                                             target={"_blank"} className="nav-link p-0 text-muted">
+                                                             target="_blank" rel="noopener noreferrer"
+                                                             className="nav-link p-0 text-muted">
                                 Help Translation</a>
                             </li>
                         </ul>

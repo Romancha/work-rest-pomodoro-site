@@ -14,8 +14,8 @@ const CommonIssues = () => {
                             optimizations for battery consumption, which affects apps that need to run in the
                             background and send notifications. If you do not receive notifications, please read
                             the article – <a href="https://dontkillmyapp.com/"
-                                             target={"_blank"}>dontkillmyapp.com</a> it describes why this
-                            happens and how to fix this issue for a specific phone model.
+                                             target="_blank" rel="noopener noreferrer">dontkillmyapp.com</a> it
+                            describes why this happens and how to fix this issue for a specific phone model.
                         </Accordion.Body>
                     </Accordion.Item>
                 </Accordion>

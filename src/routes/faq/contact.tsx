@@ -28,7 +28,7 @@ const Contact = () => {
                         <Accordion.Body>
                             If you want to help with the translation of the application please follow the link
                             and become a translator - <a href={"https://crowdin.com/project/work-rest"}
-                                                         target={"_blank"}>crowdin work-rest</a>.
+                                                         target="_blank" rel="noopener noreferrer">crowdin work-rest</a>.
                         </Accordion.Body>
                     </Accordion.Item>
                     <Accordion.Item eventKey="3">
