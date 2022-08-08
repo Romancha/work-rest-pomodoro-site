@@ -66,7 +66,7 @@ export default function Footer() {
                         <ul className="nav flex-column">
                             <li className="nav-item mb-2"><a href="/about" className="nav-link p-0 text-muted">About</a>
                             </li>
-                            <li className="nav-item mb-2"><a href="/app-privacy-policy"
+                            <li className="nav-item mb-2"><a href="/app-privacy-policy" target={"_blank"}
                                                              className="nav-link p-0 text-muted">
                                 Privacy Policy
                             </a>

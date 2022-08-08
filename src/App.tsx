@@ -9,7 +9,6 @@ import Home from "./routes/home"
 import About from "./routes/about"
 import Faq from "./routes/faq"
 import Guide from "./routes/guide"
-import PrivacyPolicy from "./routes/privacyPolicy";
 
 
 function App() {
@@ -22,7 +21,6 @@ function App() {
                     <Route path="/faq" element={<Faq/>}/>
                     <Route path="/guide" element={<Guide/>}/>
                     <Route path="/release" element={<Release/>}/>
-                    <Route path="/app-privacy-policy" element={<PrivacyPolicy/>}/>
                 </Route>
             </Routes>
         </BrowserRouter>
