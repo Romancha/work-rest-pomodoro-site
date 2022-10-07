@@ -2,6 +2,16 @@ import {ReleaseCard} from "./releaseCard";
 
 const ReleasesData: Array<ReleaseCard> = [
     {
+        version: "3.3.9",
+        date: "Feb 21, 2022",
+        newFeatures: [],
+        improvements: [],
+        fixedBugs: [
+            "User rating is not calculated correctly",
+        ],
+        cleanups: []
+    },
+    {
         version: "3.3.8",
         date: "Feb 3, 2022",
         newFeatures: ["Added user rating. Now you can compete in pomodoro ranking!"],
