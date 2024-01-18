@@ -1,0 +1,21 @@
+#build react app
+FROM node:17.7.2-alpine3.15 AS builder
+
+WORKDIR /app
+COPY package*.json /app/
+RUN npm install
+COPY ./ /app/
+RUN npm run build
+
+#copy builded site to nginx
+FROM alpine:3.19
+
+COPY --from=builder /app/build/ /wrpomodoro
+
+# Create a script to copy files to the host and initiate shutdown
+RUN echo "#!/bin/sh" > /copy_and_shutdown.sh && \
+    echo "cp -r /wrpomodoro/* /wrpomodoro_site/ && shutdown -h now" >> /copy_and_shutdown.sh && \
+    chmod +x /copy_and_shutdown.sh
+
+# Start the script when the container launches
+CMD ["/copy_and_shutdown.sh"]

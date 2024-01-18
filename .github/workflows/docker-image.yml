@@ -9,6 +9,17 @@ jobs:
   build:
 
     runs-on: ubuntu-latest
+    strategy:
+      matrix:
+        include:
+          - tags: ${{ secrets.DOCKER_HUB_USERNAME }}/wr-pomodoro-site:latest
+            dockerfile: ./Dockerfile
+            cache-from: type=registry,ref=${{ secrets.DOCKER_HUB_USERNAME }}/wr-pomodoro-site:buildcache
+            cache-to: type=registry,ref=${{ secrets.DOCKER_HUB_USERNAME }}/wr-pomodoro-site:buildcache,mode=max
+          - image: ${{ secrets.DOCKER_HUB_USERNAME }}/wr-pomodoro-site-app-data:latest
+            dockerfile: ./Dockerfile_app_data
+            cache-from: type=registry,ref=${{ secrets.DOCKER_HUB_USERNAME }}/wr-pomodoro-site-app-data:buildcache
+            cache-to: type=registry,ref=${{ secrets.DOCKER_HUB_USERNAME }}/wr-pomodoro-site-app-data:buildcache,mode=max
 
     steps:
       - name: Checkout
@@ -24,8 +35,8 @@ jobs:
         uses: docker/build-push-action@v2
         with:
           context: .
-          file: ./Dockerfile
+          file: ${{ matrix.dockerfile }}
           push: true
-          tags: ${{ secrets.DOCKER_HUB_USERNAME }}/wr-pomodoro-site:latest
-          cache-from: type=registry,ref=${{ secrets.DOCKER_HUB_USERNAME }}/wr-pomodoro-site:buildcache
-          cache-to: type=registry,ref=${{ secrets.DOCKER_HUB_USERNAME }}/wr-pomodoro-site:buildcache,mode=max
+          tags: ${{ matrix.tags }}
+          cache-from: ${{ matrix.cache-from }}
+          cache-to: ${{ matrix.cache-to }}
