@@ -38,6 +38,12 @@ const Contact = () => {
                             support.
                         </Accordion.Body>
                     </Accordion.Item>
+                    <Accordion.Item eventKey="4">
+                        <Accordion.Header>How do I delete account?</Accordion.Header>
+                        <Accordion.Body>
+                            Please read <a href={"/delete-account"}>Delete account</a> page.
+                        </Accordion.Body>
+                    </Accordion.Item>
                 </Accordion>
             </div>
         </div>

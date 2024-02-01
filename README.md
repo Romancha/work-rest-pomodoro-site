@@ -16,13 +16,13 @@ Developing like a general react app.
 Clone repository and run for install packages:
 
 ```
-npm install
+yarn
 ```
 
 Runs the app in the development mode:
 
 ```
-npm start
+yarn run start
 ```
 
 Open [http://localhost:3000](http://localhost:3000) to view it in the browser.

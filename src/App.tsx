@@ -9,6 +9,7 @@ import Home from "./routes/home"
 import About from "./routes/about"
 import Faq from "./routes/faq"
 import Guide from "./routes/guide"
+import DeleteAccount from "./routes/deleteAccount"
 
 
 function App() {
@@ -21,6 +22,7 @@ function App() {
                     <Route path="/faq" element={<Faq/>}/>
                     <Route path="/guide" element={<Guide/>}/>
                     <Route path="/release" element={<Release/>}/>
+                    <Route path="/delete-account" element={<DeleteAccount/>}/>
                 </Route>
             </Routes>
         </BrowserRouter>
