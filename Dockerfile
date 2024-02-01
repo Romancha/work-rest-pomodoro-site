@@ -3,9 +3,9 @@ FROM node:21.6.1-alpine3.19 AS builder
 
 WORKDIR /app
 COPY package*.json /app/
-RUN npm install
+RUN yarn install
 COPY ./ /app/
-RUN npm run build
+RUN yarn run build
 
 #copy builded site to nginx
 FROM jonasal/nginx-certbot:3.1.2
