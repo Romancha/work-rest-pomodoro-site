@@ -1,5 +1,5 @@
 #build react app
-FROM node:17.7.2-alpine3.15 AS builder
+FROM node:21.6.1-alpine3.19 AS builder
 
 WORKDIR /app
 COPY package*.json /app/
